@@ -22,15 +22,13 @@ const App = () => {
     )
   })}, [])
 
-  
+  useEffect(()=>console.log(data));
 
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-      {data.forEach(character=>{
-        return(
-          <Character />
-        )
+      {data.map(character=>{
+        return <Character birth_year={character.birth_year} eye_color={character.eye_color} gender={character.gender} name={character.name} height={character.height} mass={character.mass} hair_color={character.hair_color} skin_color={character.skin_color} key={character.name} />
       })}
     </div>
   );
