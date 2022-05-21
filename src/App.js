@@ -26,10 +26,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
-      {data.map(character=>{
-        return <Character birth_year={character.birth_year} eye_color={character.eye_color} gender={character.gender} name={character.name} height={character.height} mass={character.mass} hair_color={character.hair_color} skin_color={character.skin_color} key={character.name} />
-      })}
+      <h1 className="Header">Characters:</h1>
+      <div className='char-container-container'>
+        {data.map(character=>{
+          return <Character birth_year={character.birth_year} eye_color={character.eye_color} gender={character.gender} name={character.name} height={character.height} mass={character.mass} hair_color={character.hair_color} skin_color={character.skin_color} key={character.url.substr((character.url.length-2), 1)} />
+        })}
+      </div>
     </div>
   );
 }
